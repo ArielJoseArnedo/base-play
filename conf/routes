@@ -1,0 +1,5 @@
+# Routes
+
+POST /v1/commands co.com.ajac.playcommand.commands.CommandProcessor.execute(request: Request)
+
+GET /version    co.com.ajac.infrastructure.interfaces.controllers.VersionController.version()
