@@ -1,10 +1,10 @@
 package co.com.ajac.infrastructure.events;
 
-import co.com.ajac.infrastructure.api.events.Event;
-import co.com.ajac.infrastructure.api.events.EventPublisher;
+import co.com.ajac.base.events.Event;
+import co.com.ajac.base.events.Publisher;
 import io.vavr.collection.List;
 
-public class Publisher implements EventPublisher {
+public class EventPublisher implements Publisher {
     @Override
     public List<Event> publish(List<Event> list) {
         return list;
