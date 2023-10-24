@@ -1,12 +1,12 @@
+.DS_Store
 logs
 target
+.bsp/
+.idea/
+/.bsp
 /.idea
 /.idea_modules
 /.classpath
 /.project
 /.settings
-/.bsp
 /RUNNING_PID
-/.g8
-*.iml
-*.log

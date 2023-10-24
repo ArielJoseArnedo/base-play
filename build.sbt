@@ -7,19 +7,23 @@ lazy val root = (project in file("."))
   .enablePlugins(PlayJava)
   .enablePlugins(BuildInfoPlugin)
   .settings(
+    javacOptions ++= Seq("-source", "17", "-target", "17"),
     buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
     buildInfoPackage := "co.com.ajac",
     buildInfoOptions += BuildInfoOption.ToJson
   )
 
-scalaVersion := "2.13.8"
+ThisBuild / evictionErrorLevel := Level.Info
+
+scalaVersion := "2.13.6"
 
 resolvers += "jitpack" at "https://jitpack.io"
 
 libraryDependencies ++= Seq(
-  guice,
-  "com.github.ArielJoseArnedo"    % "api-play-command"        % "2.1.1",
-  "org.projectlombok"             % "lombok"                  % "1.18.12"                         % Provided,
+  "com.google.inject"             % "guice"                   % "5.1.0",
+  "com.github.ArielJoseArnedo"    % "api-play-command"        % "3.2.0",
+  "com.fasterxml.jackson.module"  %% "jackson-module-scala"   % "2.15.3",
+  "org.projectlombok"             % "lombok"                  % "1.18.26"                         % Provided,
   "net.aichler"                   % "jupiter-interface"       % JupiterKeys.jupiterVersion.value  % Test,
   "org.mockito"                   % "mockito-junit-jupiter"   % "2.28.2"                          % Test,
   "org.junit.platform"            % "junit-platform-runner"   % "1.6.2"                           % Test,
